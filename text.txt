@@ -1,0 +1,35 @@
+c#include <stdio.h>
+
+int main() {
+    double speed, time, distance_km;
+    double meters, centimeters, millimeters;
+
+    // Prompt and read user inputs
+    printf("Enter speed in km/h: ");
+    if (scanf("%lf", &speed) != 1) {
+        printf("Invalid input for speed.\n");
+        return 1;
+    }
+
+    printf("Enter time in hours: ");
+    if (scanf("%lf", &time) != 1) {
+        printf("Invalid input for time.\n");
+        return 1;
+    }
+
+    // Calculate base distance in kilometers
+    distance_km = speed * time;
+
+    // Convert distance to target metric units
+    meters = distance_km * 1000.0;
+    centimeters = distance_km * 100000.0;
+    millimeters = distance_km * 1000000.0;
+
+    // Display the results formatted to 2 decimal places
+    printf("\n--- Conversion Results ---\n");
+    printf("Distance in Meters:       %.2f m\n", meters);
+    printf("Distance in Centimeters:  %.2f cm\n", centimeters);
+    printf("Distance in Millimeters:  %.2f mm\n", millimeters);
+
+    return 0;
+}
